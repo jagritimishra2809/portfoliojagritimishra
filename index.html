@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jagriti Mishra | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#060816;
+color:white;
+overflow-x:hidden;
+}
+
+/* Background */
+
+.bg{
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(5,10,25,0.84),rgba(5,10,25,0.94)),
+url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1920&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+z-index:-3;
+}
+
+.blur1{
+position:fixed;
+width:350px;
+height:350px;
+background:#7c3aed;
+filter:blur(150px);
+opacity:0.18;
+top:-100px;
+right:-50px;
+z-index:-2;
+}
+
+.blur2{
+position:fixed;
+width:350px;
+height:350px;
+background:#0ea5e9;
+filter:blur(150px);
+opacity:0.18;
+bottom:-120px;
+left:-50px;
+z-index:-2;
+}
+
+/* Navbar */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:22px 8%;
+z-index:1000;
+background:rgba(0,0,0,0.15);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+.logo{
+font-size:30px;
+font-weight:700;
+background:linear-gradient(90deg,#a855f7,#38bdf8);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav ul{
+display:flex;
+gap:16px;
+list-style:none;
+flex-wrap:wrap;
+}
+
+nav ul li button,
+nav ul li a{
+
+padding:11px 20px;
+border-radius:30px;
+border:1px solid rgba(255,255,255,0.08);
+background:rgba(255,255,255,0.05);
+color:white;
+cursor:pointer;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+backdrop-filter:blur(10px);
+
+}
+
+nav ul li button:hover,
+nav ul li a:hover{
+
+background:#38bdf8;
+color:black;
+transform:translateY(-3px);
+
+}
+
+/* Hero */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 8% 80px;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.hero-text{
+flex:1;
+min-width:300px;
+}
+
+.hero-text h4{
+font-size:24px;
+color:#c084fc;
+margin-bottom:15px;
+}
+
+.hero-text h1{
+font-size:85px;
+line-height:1;
+margin-bottom:25px;
+}
+
+.hero-text h1 span{
+background:linear-gradient(90deg,#8b5cf6,#38bdf8);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+max-width:700px;
+line-height:1.9;
+font-size:18px;
+color:#d1d5db;
+margin-bottom:35px;
+}
+
+.hero-btns{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.hero-btn{
+padding:15px 34px;
+border:none;
+border-radius:40px;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.primary{
+background:linear-gradient(90deg,#8b5cf6,#38bdf8);
+color:white;
+}
+
+.secondary{
+background:rgba(255,255,255,0.08);
+color:white;
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+}
+
+.hero-btn:hover{
+transform:translateY(-5px);
+}
+
+/* Profile */
+
+.profile-box{
+width:360px;
+height:360px;
+border-radius:50%;
+padding:8px;
+background:linear-gradient(135deg,#8b5cf6,#38bdf8);
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 0 40px rgba(139,92,246,0.4);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+}
+
+.profile-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:50%;
+border:5px solid #060816;
+}
+
+/* Sections */
+
+.section{
+padding:110px 8%;
+}
+
+.section-title{
+font-size:50px;
+margin-bottom:60px;
+text-align:center;
+}
+
+/* About */
+
+.about-box{
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.08);
+padding:45px;
+border-radius:30px;
+backdrop-filter:blur(18px);
+line-height:1.9;
+color:#d1d5db;
+font-size:17px;
+}
+
+/* Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:25px;
+}
+
+.card{
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.08);
+padding:30px;
+border-radius:25px;
+backdrop-filter:blur(18px);
+transition:0.35s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(56,189,248,0.2);
+}
+
+.card h3{
+margin-bottom:15px;
+font-size:24px;
+color:#38bdf8;
+}
+
+.card p{
+line-height:1.8;
+color:#d1d5db;
+}
+
+/* Skills */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:18px;
+}
+
+.skill{
+padding:15px 24px;
+border-radius:30px;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.08);
+transition:0.3s;
+backdrop-filter:blur(10px);
+}
+
+.skill:hover{
+background:#38bdf8;
+color:black;
+transform:scale(1.08);
+}
+
+/* Contact */
+
+.contact-box{
+max-width:800px;
+margin:auto;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.08);
+padding:50px;
+border-radius:30px;
+backdrop-filter:blur(18px);
+}
+
+.contact-item{
+margin:22px 0;
+font-size:17px;
+color:#d1d5db;
+}
+
+.contact-item a{
+color:#38bdf8;
+text-decoration:none;
+}
+
+/* Modal */
+
+.overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(6px);
+display:none;
+z-index:999;
+}
+
+.overlay.active{
+display:block;
+}
+
+.modal{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0.8);
+width:90%;
+max-width:850px;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+padding:40px;
+border-radius:30px;
+opacity:0;
+visibility:hidden;
+transition:0.35s;
+z-index:1000;
+max-height:85vh;
+overflow-y:auto;
+}
+
+.modal.active{
+opacity:1;
+visibility:visible;
+transform:translate(-50%,-50%) scale(1);
+}
+
+.close{
+position:absolute;
+top:18px;
+right:18px;
+width:40px;
+height:40px;
+border:none;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+color:white;
+cursor:pointer;
+font-size:18px;
+}
+
+.modal h2{
+margin-bottom:25px;
+font-size:38px;
+}
+
+.modal p{
+line-height:1.9;
+color:#d1d5db;
+}
+
+/* Footer */
+
+footer{
+text-align:center;
+padding:40px;
+color:#94a3b8;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.hero{
+justify-content:center;
+text-align:center;
+}
+
+.hero-btns{
+justify-content:center;
+}
+
+.hero-text h1{
+font-size:58px;
+}
+
+.section-title{
+font-size:38px;
+}
+
+.profile-box{
+width:280px;
+height:280px;
+}
+
+nav{
+flex-direction:column;
+gap:18px;
+}
+
+nav ul{
+justify-content:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="blur1"></div>
+<div class="blur2"></div>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- Navbar -->
+
+<nav>
+
+<div class="logo">
+Jagriti Mishra
+</div>
+
+<ul>
+
+<li><a href="#about-section">About</a></li>
+<li><a href="#projects-section">Projects</a></li>
+<li><a href="#skills-section">Skills</a></li>
+<li><a href="#contact-section">Contact</a></li>
+
+<li>
+<button onclick="openModal()">
+Quick Intro
+</button>
+</li>
+
+</ul>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h4>Hello, I'm</h4>
+
+<h1>
+<span>Jagriti</span><br>
+Mishra
+</h1>
+
+<p>
+
+Computer Science Engineering student with expertise in
+Data Structures, Java and C programming, focused on building
+efficient and logic-driven digital solutions.
+
+<br><br>
+
+Passionate about frontend development, UI/UX design,
+problem solving and creating modern interactive web experiences
+that combine aesthetics, functionality and innovation.
+
+<br><br>
+
+Actively exploring software architecture, enterprise-level workflows
+and scalable technologies while continuously improving technical
+and creative skills.
+
+</p>
+
+<div class="hero-btns">
+
+<button class="hero-btn primary" onclick="openModal()">
+Explore Portfolio
+</button>
+
+<a href="#projects-section">
+<button class="hero-btn secondary">
+View Projects
+</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="profile-box">
+
+<img src="profile.jpeg" alt="Jagriti">
+
+</div>
+
+</section>
+
+<!-- About -->
+
+<section class="section" id="about-section">
+
+<h2 class="section-title">
+About Me
+</h2>
+
+<div class="about-box">
+
+<h3 style="font-size:32px; margin-bottom:20px; color:#38bdf8;">
+Jagriti Mishra
+</h3>
+
+<p>
+
+Computer Science Engineering student with expertise in
+Data Structures, Java and C programming, focused on building
+efficient and logic-driven digital solutions.
+
+<br><br>
+
+Passionate about frontend development, UI/UX design,
+problem solving and creating modern interactive web experiences
+that combine aesthetics, functionality and innovation.
+
+<br><br>
+
+Additionally, I collaborated with a technical team during
+2023–2024 on academic and project-based work including
+an AI-based credit scoring prototype for small-scale business
+use cases and participated in structured technical bootcamps
+focused on real-world product workflows.
+
+<br><br>
+
+I continuously explore emerging technologies while strengthening
+my expertise in Data Structures, Algorithms, Java, frontend
+development and software problem solving.
+
+</p>
+
+<br>
+
+<button class="hero-btn primary" onclick="openEducation()">
+View Education
+</button>
+
+</div>
+
+</section>
+
+<!-- Projects -->
+
+<section class="section" id="projects-section">
+
+<h2 class="section-title">
+Projects
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+Interactive Portfolio
+</h3>
+
+<p>
+Modern futuristic portfolio with animated interactions,
+glassmorphism UI and responsive design.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+AI Credit Scoring Prototype
+</h3>
+
+<p>
+Collaborated on an AI-based credit scoring prototype
+designed for small-scale business use cases during
+technical training and project-based learning.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+Weather Application
+</h3>
+
+<p>
+Real-time weather application built using JavaScript
+and external API integration with responsive UI.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Skills -->
+
+<section class="section" id="skills-section">
+
+<h2 class="section-title">
+Skills
+</h2>
+
+<div class="skills">
+
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">Java</div>
+<div class="skill">C Programming</div>
+<div class="skill">C++</div>
+<div class="skill">Data Structures</div>
+<div class="skill">Algorithms</div>
+<div class="skill">OOP</div>
+<div class="skill">DBMS</div>
+<div class="skill">Operating Systems</div>
+<div class="skill">Responsive Design</div>
+<div class="skill">UI/UX Design</div>
+<div class="skill">Git & GitHub</div>
+<div class="skill">Problem Solving</div>
+<div class="skill">Teamwork</div>
+
+</div>
+
+</section>
+
+<!-- Contact -->
+
+<section class="section" id="contact-section">
+
+<h2 class="section-title">
+Contact
+</h2>
+
+<div class="contact-box">
+
+<div class="contact-item">
+Email:
+<a href="mailto:jagritimishra2809@gmail.com">
+jagritimishra2809@gmail.com
+</a>
+</div>
+
+<div class="contact-item">
+Phone:
+<a href="tel:+919129963475">
++91 9129963475
+</a>
+</div>
+
+<div class="contact-item">
+GitHub:
+<a href="https://github.com/jagritimishra2809" target="_blank">
+github.com/jagritimishra2809
+</a>
+</div>
+
+<div class="contact-item">
+LinkedIn:
+<a href="https://www.linkedin.com/in/jagriti-mishra-5ba056284?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+View LinkedIn Profile
+</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- Quick Intro Modal -->
+
+<div class="modal" id="modal">
+
+<button class="close" onclick="closeModal()">
+×
+</button>
+
+<h2>
+Professional Overview
+</h2>
+
+<p>
+
+Jagriti Mishra is a Computer Science Engineering student
+with expertise in Data Structures, C and Java programming,
+focused on building efficient and logic-driven digital solutions.
+
+<br><br>
+
+She is passionate about frontend development, UI/UX design,
+problem solving and software architecture while continuously
+exploring enterprise-level technologies and scalable systems.
+
+<br><br>
+
+Her work combines aesthetics, interactivity and functionality,
+resulting in clean, modern and professional digital experiences.
+
+</p>
+
+</div>
+
+<!-- Education Modal -->
+
+<div class="modal" id="educationModal">
+
+<button class="close" onclick="closeEducation()">
+×
+</button>
+
+<h2>
+Education
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+B.Tech in Computer Science & Engineering
+</h3>
+
+<p>
+
+Banasthali Vidyapeeth, Rajasthan
+
+<br><br>
+
+Currently pursuing Second Year B.Tech with focus on:
+<br>
+• Data Structures & Algorithms
+<br>
+• Object Oriented Programming
+<br>
+• Software Development
+<br>
+• Frontend Technologies
+
+<br><br>
+
+Current CGPA:
+<strong>9.17</strong>
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+Senior Secondary (ISC Board)
+</h3>
+
+<p>
+
+City Montessori School, Lucknow
+
+<br><br>
+
+Percentage:
+<strong>93.25%</strong>
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+Secondary School (ICSE Board)
+</h3>
+
+<p>
+
+City Montessori School, Lucknow
+
+<br><br>
+
+Percentage:
+<strong>96.6%</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+
+© 2026 Jagriti Mishra • All Rights Reserved
+
+</footer>
+
+<script>
+
+const modal = document.getElementById('modal');
+const educationModal = document.getElementById('educationModal');
+const overlay = document.getElementById('overlay');
+
+function openModal(){
+
+modal.classList.add('active');
+overlay.classList.add('active');
+
+}
+
+function closeModal(){
+
+modal.classList.remove('active');
+overlay.classList.remove('active');
+
+}
+
+function openEducation(){
+
+educationModal.classList.add('active');
+overlay.classList.add('active');
+
+}
+
+function closeEducation(){
+
+educationModal.classList.remove('active');
+overlay.classList.remove('active');
+
+}
+
+overlay.addEventListener('click',()=>{
+
+closeModal();
+closeEducation();
+
+});
+
+</script>
+
+</body>
+</html>
